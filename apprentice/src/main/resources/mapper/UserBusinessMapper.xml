@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangfugui.apprentice.dao.mapper.UserBusinessMapper">
+    <resultMap id="BaseResultMap" type="com.wangfugui.apprentice.dao.domain.UserBusiness">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="key_id" jdbcType="VARCHAR" property="keyId"/>
+        <result column="value" jdbcType="VARCHAR" property="value"/>
+        <result column="btn_str" jdbcType="VARCHAR" property="btnStr"/>
+        <result column="delete_flag" jdbcType="VARCHAR" property="deleteFlag"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id
+        , `type`, key_id, `value`, btn_str, tenant_id, delete_flag
+    </sql>
+    <select id="checkIsValueExist" resultType="com.wangfugui.apprentice.dao.domain.UserBusiness">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_user_business
+        where type = #{param1} and key_id = #{param2}
+    </select>
+    <update id="updateByExampleSelective">
+        update sys_user_business
+        set btn_str = #{btnStr}
+        where `type` = #{type}
+          and key_id = #{keyId}
+    </update>
+</mapper>

@@ -1,0 +1,20 @@
+server:
+  port: 8080
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/apprentice?serverTimezone=PRC
+    username: root
+    password: 123456
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+base:
+  javaDir: E:\msyWorkspace\Programmer-Apprentice\apprentice\src\main\java
+  mapperDir: E:\msyWorkspace\Programmer-Apprentice\apprentice\src\main\resources\mapper
+#minio配置
+minio:
+  url: http://localhost:9000  #对象存储服务的URL
+  accessKey: root #Access key账户
+  secretKey: 123456  #Secret key密码

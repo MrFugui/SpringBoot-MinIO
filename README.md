@@ -13,11 +13,6 @@ SpringBoot集成minio实现文件的上传，下载，获取列表，增加桶�
 2.  xxxx
 3.  xxxx
 
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
 
 #### 参与贡献
 
